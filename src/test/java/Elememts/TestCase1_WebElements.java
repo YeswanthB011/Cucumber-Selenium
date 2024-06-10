@@ -1,9 +1,11 @@
 package Elememts;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 
 
 public class TestCase1_WebElements {
@@ -14,10 +16,10 @@ public class TestCase1_WebElements {
 	@FindBy(xpath="//*[contains(text(),' Signup / Login' )]")public WebElement NewUsertext;
 	
 	
-	//Page 2 - Sign-Up
+	//Page 2 - Sign-Up	
 	@FindBy(xpath="//*[contains(text(),'New User Signup!')]") public WebElement Signup_ui;
 	@FindBy(xpath="//input[@placeholder='Name']") public WebElement UserName;
-	@FindBy(xpath="//input[@placeholder='Email Address' and @data-qa='login-email']") public WebElement UserEmail;
+	@FindBy(xpath="//input[@placeholder='Email Address' and @data-qa='signup-email']") public WebElement UserEmail;
 	@FindBy(xpath="//button[text()='Signup']") public WebElement Signup_button;
 	
 	//Page 3 - New User Details
@@ -48,16 +50,19 @@ public class TestCase1_WebElements {
 	@FindBy(xpath="//*[contains(text(),'Continue')]") public WebElement Continue;
 	
 	//Page 5 - Delete Account
+	@FindBy(xpath="//*[contains(text(),' Logged in as ')]") public WebElement loggedInAs;
 	@FindBy(xpath="//*[contains(text(),'Delete Account')]") public WebElement DelAcc;
 	@FindBy(xpath="//*[contains(text(),'Account Deleted!')]") public WebElement Account_Deleted;
 	@FindBy(xpath="//button[text()='Continue']") public WebElement Continue2;
-	
+	public WebDriver driver;
 	
 	 
 	public TestCase1_WebElements(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		
+	}
 	}
 	
 	
 
-}
+

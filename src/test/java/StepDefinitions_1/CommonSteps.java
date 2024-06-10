@@ -1,26 +1,26 @@
 package StepDefinitions_1;
 
-import io.cucumber.java.Before;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.cucumber.java.After;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import Elememts.TestCase1_WebElements;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CommonSteps {
 
 	private WebDriver driver;
 
-//	@Before
-//	public void Setup() {
-//		driver = new ChromeDriver();
-//		// ChromeOptions options = new ChromeOptions();
-//		// System.out.print(options);
-//
-//	}
+	TestCase1_WebElements testCase1_WebElements;
+
 	@Before
 	public void startBrowser() {
-	    WebDriverManager.chromedriver().setup();
-	    driver = new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
 	}
 
 	public void goToUrl(String url) {
@@ -40,7 +40,12 @@ public class CommonSteps {
 	}
 
 	@After
-	public void quit() {
+	public void quit(Scenario scenario) {
+		if(scenario.isFailed()) {
+			final byte[] Screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(Screenshot,"image/png",scenario.getName());
+		}
+		
 		driver.quit();
 
 	}

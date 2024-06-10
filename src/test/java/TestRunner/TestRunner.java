@@ -9,14 +9,13 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = {"Features"},
 		glue = {"StepDefinitions_1"},
-		//plugin = {"pretty", "json:target/json-report/cucumber.json"},
-		//dryRun = true,
+		plugin = {"pretty", "json:target/json-report/cucumber.json"},
+		dryRun = false,
 		monochrome = true
-		//tags = "@S01"
+		//tags = "@P1 or @P2"
 		//name = {"Logo"}
 		)
-public class TestRunner  {
+public class TestRunner {
 
 }
-
 

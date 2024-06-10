@@ -5,21 +5,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class NewUserReg_Step1 {
+public class Homepage_Step1 {
 	CommonSteps commonSteps;
 	Homepage homePage;
 
-	public NewUserReg_Step1(CommonSteps commonSteps, Homepage homePage) {
-		
+	public Homepage_Step1(CommonSteps commonSteps, Homepage homePage) {
+
 		this.commonSteps = commonSteps;
-		
+
 		this.homePage = homePage;
 	}
 
 	@Given("new browser opened")
 	public void new_browser_opened() {
-
-		
 
 	}
 
