@@ -1,13 +1,13 @@
 Feature: Register and Delete User
 
-  #@S01
-  #Scenario: New Login/Signup
-    #Given new browser opened
-    #When Navigate to url 'http://automationexercise.com'
-    #Then Verify that home page is visible successfully
-    #When Click the 'Signup / Login' button
-#
-  #@S02
+  @S01
+  Scenario: New Login/Signup
+    Given new browser opened
+    When Navigate to url 'http://automationexercise.com'
+    Then Verify that home page is visible successfully
+    When Click the 'Signup / Login' button
+
+  @S02
   Scenario: signup
   	Given Im at signup page 'https://automationexercise.com/login'
     When Verify 'New User Signup!' is visible
